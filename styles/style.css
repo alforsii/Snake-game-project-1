@@ -1,0 +1,551 @@
+body {
+  display: flex;
+  justify-content: space-around;
+  background: url(../img/newImg.png) no-repeat;
+  /* background: url(../img/snake-gif.gif) no-repeat; */
+  background-size: cover;
+}
+
+body a {
+  position: absolute;
+  top: 5vw;
+  right: 8vw;
+  color: #000;
+  padding: 2vw;
+  background: url(../img/fork-icon.png) no-repeat;
+  background-size: 3vw;
+  height: 1vw;
+  opacity: 0.7;
+}
+
+body select {
+  width: 13vw;
+  font-size: 4vw;
+  margin-top: 20px;
+  background: transparent;
+  border: none;
+  color: rgb(131, 127, 127);
+  position: absolute;
+  top: 15vw;
+  right: 2vw;
+}
+
+/* -------canvas -----------*/
+canvas {
+  background: url(../img/bg.jpg);
+  background-size: 400px;
+  border: 3px solid #000;
+  border-radius: 10px;
+  width: 70vw;
+  height: 48vw;
+  max-height: 630px;
+}
+aside {
+  background: url(../img/arrow-key.png) 3px 5px;
+  background-size: 100px;
+  height: 100px;
+}
+#leftSide span,
+#rightSide span {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+#leftSide {
+  float: left;
+  position: absolute;
+  width: 100px;
+  top: 15vw;
+  left: 3vw;
+}
+#rightSide {
+  float: right;
+  position: absolute;
+  width: 100px;
+  top: 15vw;
+  right: 2vw;
+}
+#leftSide button,
+#rightSide button {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 10px 15px;
+  opacity: 0.5;
+}
+/* buttons */
+/* ------------start button--------------- */
+#start-button {
+  font-size: 7vw;
+  font-weight: bolder;
+  background-color: transparent;
+  color: rgb(11, 152, 199);
+  border: none;
+  position: absolute;
+  top: 23vw;
+  right: 40vw;
+}
+#start-button:hover {
+  color: #0f0;
+  cursor: pointer;
+}
+/*----------------- canvas buttons------------- */
+#canvasButtons {
+  display: flex;
+  width: 70vw;
+  height: 0px;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: 8vw;
+}
+
+#restart-button {
+  color: rgb(67, 73, 69);
+  font-size: 4vw;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+#msg-button {
+  color: red;
+  font-size: 3vw;
+  background-color: transparent;
+  border: none;
+}
+#exit-button {
+  color: rgb(67, 73, 69);
+  font-size: 4vw;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+}
+#restart-button:hover {
+  color: #0f0;
+}
+#exit-button:hover {
+  color: red;
+}
+
+/* class display-none */
+.display-none {
+  display: none;
+}
+/* players div */
+#players {
+  width: 75vw;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  top: 1vw;
+  left: 12vw;
+}
+.flip-players {
+  flex-direction: row-reverse;
+}
+/* players input */
+#player1 {
+  color: #ff851b;
+}
+#player2 {
+  color: #ff4136;
+}
+.name {
+  font-family: monospace;
+  text-align: center;
+  width: 16vw;
+  height: 4vw;
+  font-size: 3vw;
+  background-color: transparent;
+  border: none;
+}
+/* Score buttons */
+#score1 {
+  color: #ff851b;
+}
+#score2 {
+  color: #ff4136;
+}
+.score {
+  text-align: center;
+  padding: 0 3vw 0 1vw;
+  height: 4vw;
+  font-size: 3vw;
+  background-color: transparent;
+  border: none;
+}
+
+@media (min-width: 676px) and (max-width: 960px) {
+  #player2div {
+    display: none;
+  }
+  #canvasButtons {
+    display: flex;
+    width: 70vw;
+    height: 0px;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 6vw;
+  }
+  /* arrow mobile/tablet controller */
+  #arrowButtonsDiv {
+    position: absolute;
+    width: 74vw;
+    height: 40vw;
+    top: 13vw;
+  }
+  .arrowButtons {
+    padding: 45px 40px;
+    border: none;
+    border-radius: 30px;
+    color: teal;
+  }
+  .arrowBox {
+    display: flex;
+    justify-content: space-around;
+    width: 95vw;
+  }
+  #leftRight {
+    justify-content: center;
+  }
+  #left {
+    background: url(../img/arrow-key.png) no-repeat -5px -55px;
+    background-size: 200px;
+    opacity: 0.4;
+    position: absolute;
+    left: 0;
+    top: 7vw;
+  }
+  #up {
+    background: url(../img/arrow-key.png) no-repeat -60px 0px;
+    background-size: 200px;
+    padding: 40px 40px;
+    opacity: 0.4;
+    position: absolute;
+    top: -4vw;
+    right: 10vw;
+  }
+  #right {
+    background: url(../img/arrow-key.png) no-repeat -115px -55px;
+    background-size: 200px;
+    opacity: 0.4;
+    position: absolute;
+    right: 3vw;
+    top: 7vw;
+  }
+  #down {
+    background: url(../img/arrow-key.png) no-repeat -60px -115px;
+    background-size: 200px;
+    padding: 40px 40px;
+    opacity: 0.4;
+    position: absolute;
+    bottom: 9vw;
+    right: 10vw;
+  }
+}
+
+/* style for resize 475-675 */
+@media (min-width: 575px) and (max-width: 675px) {
+  body {
+    display: flex;
+    justify-content: space-around;
+    background: url(../img/newImg.png) no-repeat 0 2vw;
+    /* background: url(../img/snake-gif.gif) no-repeat 0 6vw; */
+    background-size: cover;
+  }
+  canvas {
+    background: url(../img/bg.jpg);
+    background-size: 400px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    width: 95vw;
+    height: 60vw;
+    margin-top: 0vw;
+  }
+  body select {
+    width: 13vw;
+    font-size: 4vw;
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+    color: rgb(131, 127, 127);
+    position: absolute;
+    top: 18vw;
+    right: 2vw;
+  }
+  #start-button {
+    font-size: 8vw;
+    font-weight: bolder;
+    background-color: transparent;
+    color: rgb(11, 152, 199);
+    border: none;
+    position: absolute;
+    top: 24vw;
+    left: 37vw;
+  }
+  #canvasButtons {
+    display: flex;
+    width: 80vw;
+    height: 0px;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 12vw;
+  }
+  #players {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 2vw;
+    left: 0vw;
+  }
+  #player1 {
+    color: #ff851b;
+    width: 30vw;
+    height: 5vw;
+    font-size: 4vw;
+  }
+  #player2div {
+    display: none;
+  }
+  #score1 {
+    color: #ff851b;
+    font-size: 4vw;
+  }
+  .name {
+    font-family: monospace;
+    text-align: center;
+    width: 20vw;
+    height: 5vw;
+    font-size: 3vw;
+    background-color: transparent;
+    border: none;
+  }
+  #arrowButtonsDiv {
+    position: absolute;
+    width: 100vw;
+    height: 50vw;
+    top: 22vw;
+  }
+  .arrowButtons {
+    padding: 45px 40px;
+    border: none;
+    border-radius: 30px;
+    color: teal;
+  }
+  .arrowBox {
+    display: flex;
+    justify-content: space-around;
+    width: 95vw;
+  }
+  #leftRight {
+    justify-content: center;
+  }
+  #left {
+    background: url(../img/arrow-key.png) no-repeat -5px -55px;
+    background-size: 200px;
+    opacity: 0.4;
+    position: absolute;
+    left: 0;
+    top: 7vw;
+  }
+  #up {
+    background: url(../img/arrow-key.png) no-repeat -60px 0px;
+    background-size: 200px;
+    padding: 40px 40px;
+    opacity: 0.4;
+    position: absolute;
+    top: -10vw;
+    right: 10vw;
+  }
+  #right {
+    background: url(../img/arrow-key.png) no-repeat -115px -55px;
+    background-size: 200px;
+    opacity: 0.4;
+    position: absolute;
+    right: 3vw;
+    top: 7vw;
+  }
+  #down {
+    background: url(../img/arrow-key.png) no-repeat -60px -115px;
+    background-size: 200px;
+    padding: 40px 40px;
+    opacity: 0.4;
+    position: absolute;
+    bottom: 10vw;
+    right: 10vw;
+  }
+}
+
+/* resize max 575px */
+@media (max-width: 575px) {
+  body {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    background: url(../img/newImg.png) no-repeat 0 3vw;
+    /* background: url(../img/snake-gif.gif) no-repeat 0vw 6vw; */
+    background-size: cover;
+  }
+
+  body select {
+    width: 14vw;
+    font-size: 4vw;
+    margin-top: 20px;
+    background: transparent;
+    border: none;
+    color: rgb(131, 127, 127);
+    position: absolute;
+    top: 22vw;
+    right: 1vw;
+  }
+  /* -------canvas -----------*/
+  canvas {
+    background: url(../img/bg.jpg);
+    background-size: 400px;
+    border: 3px solid #000;
+    border-radius: 10px;
+    width: 95vw;
+    height: 80vw;
+    /* margin-top: 2vw; */
+  }
+
+  #canvas-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  /* buttons */
+  /* ------------start button--------------- */
+  #start-button {
+    font-size: 10vw;
+    font-weight: bolder;
+    background-color: transparent;
+    color: rgb(11, 152, 199);
+    border: none;
+    position: absolute;
+    top: 24vw;
+    left: 35vw;
+  }
+  /*----------------- canvas buttons------------- */
+  #canvasButtons {
+    display: flex;
+    width: 80vw;
+    height: 0px;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 15vw;
+  }
+
+  #restart-button {
+    color: rgb(67, 73, 69);
+    font-size: 4vw;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  #msg-button {
+    color: red;
+    font-size: 3vw;
+    background-color: transparent;
+    border: none;
+  }
+  #exit-button {
+    color: rgb(67, 73, 69);
+    font-size: 4vw;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+  }
+  /* players div */
+  #players {
+    width: 100vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: absolute;
+    top: 2vw;
+    left: 0vw;
+  }
+  #player1 {
+    color: #ff851b;
+    width: 40vw;
+    height: 7vw;
+    font-size: 4vw;
+  }
+  #player2div {
+    display: none;
+  }
+  #score1 {
+    color: #ff851b;
+    font-size: 6vw;
+  }
+  .name {
+    font-family: monospace;
+    text-align: center;
+    width: 20vw;
+    height: 5vw;
+    font-size: 3vw;
+    background-color: transparent;
+    border: none;
+  }
+
+  /* -------------------- */
+
+  .arrowButtons {
+    padding: 45px 40px;
+    border: 1px solid rgb(8, 8, 109);
+    border-radius: 30px;
+    color: teal;
+  }
+  .arrowBox {
+    display: flex;
+    justify-content: space-around;
+    width: 95vw;
+  }
+  #leftRight {
+    justify-content: center;
+  }
+  #left {
+    background: url(../img/arrow-key.png) no-repeat -5px -55px;
+    background-size: 200px;
+  }
+  #up {
+    background: url(../img/arrow-key.png) no-repeat -60px 0px;
+    background-size: 200px;
+    padding: 40px 40px;
+  }
+  #right {
+    background: url(../img/arrow-key.png) no-repeat -115px -55px;
+    background-size: 200px;
+  }
+  #down {
+    background: url(../img/arrow-key.png) no-repeat -60px -115px;
+    background-size: 200px;
+    padding: 40px 40px;
+  }
+}
+
+@media (min-width: 960px) {
+  #arrowButtonsDiv {
+    display: none;
+  }
+}
+@media (max-width: 960px) {
+  body a {
+    display: none;
+  }
+  #leftSide,
+  #rightSide {
+    display: none;
+  }
+}

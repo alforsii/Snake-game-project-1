@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Snake</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <!--  scripts -->
+    <script src="./js/init.js"></script>
+    <script src="./js/sounds.js"></script>
+    <script src="./js/snakeFood.js"></script>
+    <script src="./js/game.js"></script>
+    <script src="./js/snake.js"></script>
+    <script src="./js/player.js"></script>
+  </head>
+  <body>
+    <!-- --------Start canvas Div------------------------- -->
+    <div id="canvasDiv">
+      <div id="canvasButtons"></div>
+      <!-- canvas -->
+      <canvas id="my-canvas" class="display-none"></canvas>
+      <!-- Mobile/tablet remote arrows -->
+      <div id="arrowButtonsDiv" class="display-none">
+        <div id="top" class="arrowBox">
+          <button id="up" class="arrowButtons"></button>
+        </div>
+        <div id="leftRight" class="arrowBox">
+          <button id="left" class="arrowButtons"></button>
+          <button id="down" class="arrowButtons"></button>
+          <button id="right" class="arrowButtons"></button>
+        </div>
+      </div>
+      <!-- Left and right arrows indicator images-->
+      <div id="sideBar" class="display-none">
+        <aside id="leftSide">
+          <span><button>W</button></span>
+          <span>
+            <button>A</button>
+            KeyCode
+            <button>D</button>
+          </span>
+          <span><button>S</button></span>
+        </aside>
+        <aside id="rightSide">
+          <span><button>UP</button></span>
+          <span>
+            <button>LT</button>
+            Arrows_
+            <button>RT</button>
+          </span>
+          <span><button>DN</button></span>
+        </aside>
+      </div>
+    </div>
+    <!-- -------------------- end canvas div------------ -->
+    <!----------- start button ------>
+    <button id="start-button" type="submit">Start</button>
+    <!-- fork link -->
+    <a href="https://github.com/alforsii/my-project-game"></a>
+    <!-- select levels -->
+    <select id="levels">
+      <option value="130">Slow</option>
+      <option value="100">Mid</option>
+      <option value="70">Fast</option>
+    </select>
+    <!-- ---------My players Div-------------------------- -->
+    <div id="players">
+      <!-- player-1 -->
+      <div id="player1div">
+        <input id="player1" class="name" type="text" placeholder="player-1" />
+        <span id="score1" class="score display-none" type="text"></span>
+      </div>
+      <!-- player-2 -->
+      <div id="player2div">
+        <input id="player2" class="name" type="text" placeholder="player-2" />
+        <span id="score2" class="score display-none" type="text"></span>
+      </div>
+    </div>
+  </body>
+</html>
